@@ -19,10 +19,6 @@ public class Money {
         return currency;
     }
 
-    public Money times(int multiplier) {
-        return null;
-    }
-
     public static Money dollar(int amount) {
         return new Dollar(amount, "USD");
     }
@@ -42,5 +38,9 @@ public class Money {
                 "amount=" + amount +
                 ", currency='" + currency + '\'' +
                 '}';
+    }
+
+    public Money times(int multiplier) {
+        return new Money(amount * multiplier, this.currency);
     }
 }
