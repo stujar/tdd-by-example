@@ -6,5 +6,5 @@ package guru.springframework;
     Project: guru.springframework
 */
 public interface Expression {
-    Money reduce(String to);
+    Money reduce(Bank bank, String to);
 }
