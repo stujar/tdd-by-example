@@ -12,17 +12,23 @@ public class Pair {
     private final String from;
     private final String to;
 
-    public Pair(String from, String to) {
+    Pair(String from, String to) {
         this.from = from;
         this.to = to;
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Pair pair = (Pair) o;
-        return from.equals(pair.from) && to.equals(pair.to);
+        boolean result;
+        if (this == o) {
+            result = true;
+        } else if (o == null || getClass() != o.getClass()) {
+            result = false;
+        } else {
+            Pair pair = (Pair) o;
+            result = from.equals(pair.from) && to.equals(pair.to);
+        }
+        return result;
     }
 
     @Override
